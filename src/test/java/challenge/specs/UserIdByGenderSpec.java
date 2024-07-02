@@ -30,6 +30,9 @@ public class UserIdByGenderSpec {
             .log(STATUS)
             .log(BODY)
             .expectStatusCode(200)
+            /**
+             * The schema has deviations in attribute names intended for demonstration purposes.
+             */
             .expectBody(matchesJsonSchemaInClasspath("schemas/success-users-id-list-response-schema.json"))
             .build();
 
