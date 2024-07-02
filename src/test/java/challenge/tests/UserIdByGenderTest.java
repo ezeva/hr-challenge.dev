@@ -69,7 +69,7 @@ public class UserIdByGenderTest {
     });
     }
     @Test
-    public void testGetUsersByAnyContainsUsersIdMaleAndFemale() {
+    public void testGetUsersByAnyContainsOnlyUsersIdMaleAndFemale() {
         Response maleResponse = step("Get response for gender = 'male'", () -> {
         return given(userIdByGenderRequestSpec)
                 .queryParam("gender", "male")
@@ -101,8 +101,8 @@ public class UserIdByGenderTest {
             maleIdList.addAll(femaleIdList);
             Collections.sort(maleIdList);
             List<Integer> anyIdList = anyResponse.jsonPath().get("idList");
-            //assertTrue(maleIdList.stream().distinct().collect(Collectors.toList()).equals(anyIdList), "anyIdList equals sum maleIdList and femaleIdList");
-            assertTrue(anyIdList.containsAll(maleIdList.stream().distinct().collect(Collectors.toList())), "anyIdList contains all elements of maleIdList and femaleIdList");
+            assertTrue(maleIdList.stream().distinct().collect(Collectors.toList()).equals(anyIdList), "anyIdList equals sum maleIdList and femaleIdList");
+            //assertTrue(anyIdList.containsAll(maleIdList.stream().distinct().collect(Collectors.toList())), "anyIdList contains all elements of maleIdList and femaleIdList");
 
 
         });

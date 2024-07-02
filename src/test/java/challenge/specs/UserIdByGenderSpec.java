@@ -21,11 +21,11 @@ public class UserIdByGenderSpec {
             .filter(new AllureRestAssured())
             .baseUri("https://hr-challenge.dev.tapyou.com")
             and etc.
-
              */
             .filter(new AllureRestAssured())
             .baseUri("https://hr-challenge.dev.tapyou.com")
             .basePath("/api/test/users");
+
     public static ResponseSpecification userIdByGenderResponseSpec = new ResponseSpecBuilder()
             .log(STATUS)
             .log(BODY)
