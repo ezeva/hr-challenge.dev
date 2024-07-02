@@ -1,0 +1,24 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "type": "object",
+  "properties": {
+    "isSuccess": {
+      "type": "boolean"
+    },
+    "errorCode": {
+      "type": "integer",
+      "format": "int32"
+    },
+    "errorMessage": {
+      "type": ["string", "null"]
+    },
+    "idList": {
+      "type": "array",
+      "items": {
+        "type": "integer",
+        "format": "int32"
+      }
+    }
+  },
+  "required": ["isSuccess", "errorCode", "errorMessage", "idList"]
+}
